@@ -6,8 +6,8 @@ before(function () {
 });
 
 describe('Fetch products', function () {
-    it('should populate products on load', async function () {
+    it('should populate products on load', async () => {
         await showProducts();
         assert.equal(1, document.getElementsByClassName('data-row').length);
-    }, 10000);
+    }).timeout(500);
 });
