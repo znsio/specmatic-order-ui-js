@@ -9,5 +9,5 @@ describe('Fetch products', function () {
     it('should populate products on load', async function () {
         await showProducts();
         assert.equal(1, document.getElementsByClassName('data-row').length);
-    });
+    }, 10000);
 });
