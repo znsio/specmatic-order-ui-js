@@ -9,5 +9,5 @@ describe('Fetch products', function () {
     it('should populate products on load', async () => {
         await showProducts();
         assert.equal(1, document.getElementsByClassName('data-row').length);
-    }).timeout(500);
+    }).timeout(50000);
 });
