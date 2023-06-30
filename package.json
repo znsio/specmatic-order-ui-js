@@ -4,7 +4,7 @@
     "startWithStub": "npm run startBFFStubAndWait && npm start",
     "startBFFStub": "specmatic stub resources/product-search-bff-api.yaml --data resources/data --port 8082",
     "startBFFStubAndWait": "npm run startBFFStub & sleep 10",
-    "startBFFStubAndWaitWindows": "start /b npm run startBFFStub && start /wait timeout 20",
+    "startBFFStubAndWaitWindows": "start /b npm run startBFFStub && start /wait timeout 30",
     "test": "npm run startBFFStubAndWait && karma start --single-run && kill -9 $(lsof -t -i:8082)",
     "testWindows": "npm run startBFFStubAndWaitWindows && karma start --single-run && taskkill /f /t /im java.exe"
   },
