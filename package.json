@@ -1,9 +1,12 @@
 {
   "scripts": {
     "start": "serve src",
-    "startWithStub": "npm run startBFFStub && npm start",
-    "startBFFStub": "specmatic stub resources/product-search-bff-api.yaml --data resources/data --port 8082 & sleep 3",
-    "test": "npm run startBFFStub && karma start --single-run && kill -9 $(lsof -t -i:8082)"
+    "startWithStub": "npm run startBFFStubAndWait && npm start",
+    "startBFFStub": "specmatic stub resources/product-search-bff-api.yaml --data resources/data --port 8082",
+    "startBFFStubAndWait": "npm run startBFFStub & sleep 10",
+    "startBFFStubAndWaitWindows": "start /b npm run startBFFStub && start /wait timeout 20",
+    "test": "npm run startBFFStubAndWait && karma start --single-run && kill -9 $(lsof -t -i:8082)",
+    "testWindows": "npm run startBFFStubAndWaitWindows && karma start --single-run && taskkill /f /t /im java.exe"
   },
   "devDependencies": {
     "chai": "^4.3.7",
@@ -14,7 +17,10 @@
     "karma-webpack": "^5.0.0",
     "mocha": "^10.2.0",
     "serve": "^14.2.0",
-    "specmatic": "^0.68.3",
-    "webpack": "^5.81.0"
+    "specmatic": "^0.70.8",
+    "webpack": "^5.88.1"
+  },
+  "specmatic": {
+    "logLevel": "debug"
   }
 }
