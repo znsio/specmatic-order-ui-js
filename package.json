@@ -18,7 +18,7 @@
     "mocha": "^10.2.0",
     "serve": "^14.2.0",
     "specmatic": "^0.70.8",
-    "webpack": "^5.88.1"
+    "webpack": "^5.88.2"
   },
   "specmatic": {
     "logLevel": "debug"
