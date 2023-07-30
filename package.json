@@ -2,7 +2,7 @@
   "scripts": {
     "start": "serve src",
     "startWithStub": "npm run startBFFStubAndWait && npm start",
-    "startBFFStub": "specmatic stub resources/product-search-bff-api.yaml --data resources/data --port 8082",
+    "startBFFStub": "specmatic stub --data resources/data --port 8082",
     "startBFFStubAndWait": "npm run startBFFStub & sleep 10",
     "startBFFStubAndWaitWindows": "start /b npm run startBFFStub && start /wait timeout 30",
     "test": "npm run startBFFStubAndWait && karma start --single-run && kill -9 $(lsof -t -i:8082)",
